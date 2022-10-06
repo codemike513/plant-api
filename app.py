@@ -20,13 +20,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# MODEL = tf.keras.models.load_model("potatoes.h5")
+# MODEL = tf.keras.models.load_model("../models/1")
 MODEL = tf.keras.models.load_model("potatoes.h5")
 CLASS_NAMES = ["Early Blight", "Late Blight", "Healthy"]
 
 
 @app.get("/")
-async def ping():
+async def welcome():
     return "Welcome"
+
 
 @app.get("/ping")
 async def ping():
